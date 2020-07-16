@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,16 @@ export class AppComponent {
 
   bob:{name: String};
   
-   mynums: any;
+  mynums: any;
   
+  constructor(private _httpService: HttpService) { }
+
+  ngOnInit() {
+    
+  }
+
+  getTasks(){
+    this._httpService.getTasks()
+  }
 
 }
